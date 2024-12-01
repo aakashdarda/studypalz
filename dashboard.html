@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-page">
+        <div class="white-card">
+            <div class="dashboard-header">
+                <h1>Welcome, <span id="user-name">Student</span>!</h1>
+            </div>
+            <div class="dashboard-content">
+                <div class="dashboard-grid">
+                    <div class="progress-section">
+                        <h3>Your Progress</h3>
+                        <progress id="learning-progress" value="50" max="100"></progress>
+                        <p id="progress-text">50% Complete - Keep Going!</p>
+                    </div>
+
+                    <div class="mistake-analysis">
+                        <h3>Mistake Analysis</h3>
+                        <ul>
+                            <li>
+                                <span>Algebra basics</span>
+                                <span class="difficulty-indicator high">High Difficulty</span>
+                            </li>
+                            <li>
+                                <span>Geometry proofs</span>
+                                <span class="difficulty-indicator medium">Medium Difficulty</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="resources-section">
+                        <h3>Personalized Resources</h3>
+                        <ul>
+                            <li><a href="#">Algebra basics Video</a></li>
+                            <li><a href="#">Algebra Assignment #1</a></li>
+                            <li><a href="#">Geometry Puzzles</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="gamification-section">
+                        <h3>Achievements</h3>
+                        <ul>
+                            <li>Math Master - 5 Topics</li>
+                            <li>Quick Learner - 10 Questions</li>
+                        </ul>
+                        <p>Streak: 3 days</p>
+                    </div>
+
+                    <div class="recommendation-section">
+                        <h3>Next Recommendation</h3>
+                        <p>Practice Algebra to strengthen foundations!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>

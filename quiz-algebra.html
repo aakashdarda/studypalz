@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Quiz</title>
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Algebra Quiz</h2>
+        <div class="question-container">
+            <h3 id="question-text">Question will appear here</h3>
+            <div class="answers">
+                <button type="button" class="option-btn">Option 1</button>
+                <button type="button" class="option-btn">Option 2</button>
+                <button type="button" class="option-btn">Option 3</button>
+                <button type="button" class="option-btn">Option 4</button>
+            </div>
+            <div class="progress-section">
+                <progress id="quiz-progress" value="0" max="100"></progress>
+                <span id="progress-percent">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "What is 2x + 3 = 7?", options: ["x = 2", "x = 4", "x = 3", "x = 1"], correct: 0 },
+            { question: "What is the value of x in x^2 - 4 = 0?", options: ["x = ±2", "x = 4", "x = 0", "x = 2"], correct: 0 },
+            { question: "Simplify: 3(2x + 1) = ?", options: ["6x + 1", "6x + 3", "6x", "5x + 3"], correct: 1 },
+            { question: "What is the slope of y = 3x + 5?", options: ["5", "3", "0", "-3"], correct: 1 },
+            { question: "Solve: 5x - 10 = 0", options: ["x = 2", "x = 5", "x = 10", "x = 1"], correct: 0 }
+        ];
+
+        let currentQuestionIndex = 0;
+        const questionText = document.getElementById("question-text");
+        const optionButtons = document.querySelectorAll(".option-btn");
+        const progressBar = document.getElementById("quiz-progress");
+        const progressPercent = document.getElementById("progress-percent");
+
+        function loadQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            questionText.textContent = currentQuestion.question;
+            optionButtons.forEach((btn, index) => {
+                btn.textContent = currentQuestion.options[index];
+                btn.onclick = () => handleAnswer(index === currentQuestion.correct);
+            });
+
+            updateProgress();
+        }
+
+        function handleAnswer(isCorrect) {
+            if (isCorrect) {
+                alert("Correct!");
+            } else {
+                alert("Incorrect!");
+            }
+
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion();
+            } else {
+                window.location.href = "dashboard.html";
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+            progressBar.value = progress;
+            progressPercent.textContent = `${Math.round(progress)}%`;
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>

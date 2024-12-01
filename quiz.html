@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Topics Menu -->
+        <div id="topics-menu">
+            <h2>Select a Topic</h2>
+            <div class="topics-grid">
+                <a href="#quiz-section" class="topic-button">Algebra</a>
+                <a href="#quiz-section" class="topic-button">Geometry</a>
+                <a href="#quiz-section" class="topic-button">Trigonometry</a>
+                <a href="#quiz-section" class="topic-button">Calculus</a>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section" class="hidden">
+            <h3>Solve for x: 2x + 3 = 7</h3>
+            <div class="answers">
+                <button class="option-btn">x = 2</button>
+                <button class="option-btn">x = 4</button>
+                <button class="option-btn">x = 3</button>
+                <button class="option-btn">x = 1</button>
+            </div>
+            <progress id="progress-bar" value="50" max="100"></progress>
+            <p id="progress-percent">50%</p>
+        </div>
+    </div>
+</body>
+</html>
